@@ -10,9 +10,10 @@ import {
 import { TodoService } from './todo.service';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { CreateTodoDto, UpdateTodoDto } from './dto/todo.request';
+import { EModule } from 'src/share/constants/enum';
 
-@Controller('todo')
-@ApiTags('todo')
+@Controller(EModule.TODO)
+@ApiTags(EModule.TODO)
 export class TodoController {
   constructor(private readonly todoService: TodoService) {}
 
