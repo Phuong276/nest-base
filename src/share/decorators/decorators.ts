@@ -158,3 +158,19 @@ export function DtoDateTime(options?: IDtoDecoratorOption<Date>) {
     (decorators: PropertyDecorator[]) => decorators.push(IsDateString()),
   );
 }
+
+export function ResDto(options?: IDtoOptionsInitDecorators<any>) {
+  if (process.env.NODE_ENV === 'test') {
+    return applyDecorators(
+      ApiProperty(options),
+      Expose(),
+      Property({
+        enum: options?.enum,
+        object: options?.type,
+        isArray: options?.isArray,
+      }),
+    );
+  } else {
+    return applyDecorators(ApiProperty(options), Expose());
+  }
+}
