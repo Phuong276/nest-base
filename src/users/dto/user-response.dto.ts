@@ -7,6 +7,8 @@ export class ResUserDto {
   email: string;
   @ResDto()
   name: string;
+  @ResDto()
+  password: string;
   constructor(data: Partial<ResUserDto>) {
     Object.assign(this, data);
   }

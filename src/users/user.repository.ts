@@ -12,6 +12,16 @@ export class UserRepository {
       data: {
         email: createUserDto.email,
         name: createUserDto.name,
+        password: createUserDto.password,
+      },
+    });
+  }
+
+  async getOne(params: { id: number }) {
+    const { id } = params;
+    return this.prisma.user.findUnique({
+      where: {
+        id: id,
       },
     });
   }
