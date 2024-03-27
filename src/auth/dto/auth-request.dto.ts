@@ -6,3 +6,26 @@ export class LoginDto {
   @DtoString()
   password: string;
 }
+
+export class AuthRegisterDto {
+  @DtoString()
+  name: string;
+  @DtoString()
+  email: string;
+  @DtoString()
+  password: string;
+}
+
+export class AuthCredentialsDto {
+  @DtoString()
+  name: string;
+  @DtoString()
+  password: string;
+}
+
+export class ConfirmRequestDto {
+  @DtoString()
+  email: string;
+  @DtoString()
+  code: string;
+}
